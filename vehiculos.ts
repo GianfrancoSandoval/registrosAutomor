@@ -1,3 +1,5 @@
+
+//.....................///
 // Clase base para Vehículo
 export class Vehiculo {
     constructor(
@@ -37,42 +39,32 @@ export class Vehiculo {
     }
 }
 
-// Clase Auto usando composición
-export class Auto {
-    private vehiculo: Vehiculo;
-
+// Clase Auto que hereda de Vehículo
+export class Auto extends Vehiculo {
     constructor(marca: string, modelo: string, anio: number) {
-        this.vehiculo = new Vehiculo(marca, modelo, anio);
+        super(marca, modelo, anio); // Llamada al constructor de la clase base
     }
-
-    // Métodos para interactuar con la instancia de Vehiculo
     getVehiculoInfo(): string {
-        return this.vehiculo.mostrarInfo();
-    }
-}
+        return this.mostrarInfo();
+    // Puedes agregar métodos adicionales específicos para Auto si lo deseas
+}}
 
-// Clase Moto usando composición
-export class Moto {
-    private vehiculo: Vehiculo;
-
+// Clase Moto que hereda de Vehículo
+export class Moto extends Vehiculo {
     constructor(marca: string, modelo: string, anio: number) {
-        this.vehiculo = new Vehiculo(marca, modelo, anio);
+        super(marca, modelo, anio); // Llamada al constructor de la clase base
     }
-
     getVehiculoInfo(): string {
-        return this.vehiculo.mostrarInfo();
-    }
-}
+        return this.mostrarInfo();
+    // Puedes agregar métodos adicionales específicos para Moto si lo deseas
+}}
 
-// Clase Camion usando composición
-export class Camion {
-    private vehiculo: Vehiculo;
-
+// Clase Camion que hereda de Vehículo
+export class Camion extends Vehiculo {
     constructor(marca: string, modelo: string, anio: number) {
-        this.vehiculo = new Vehiculo(marca, modelo, anio);
+        super(marca, modelo, anio); // Llamada al constructor de la clase base
     }
-
-    getVehiculoInfo(): string {
-        return this.vehiculo.mostrarInfo();
-    }
-}
+     getVehiculoInfo(): string {
+        return this.mostrarInfo();
+    // Puedes agregar métodos adicionales específicos para Camion si lo deseas
+}}
